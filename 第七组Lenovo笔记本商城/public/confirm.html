@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>确认订单</title>
+    <style>
+        body {
+            background-image: url('https://p2.lefile.cn/product/adminweb/2019/05/16/6a2e1ef8-89ea-4d08-8aee-8c91267f5eb4.jpg');
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fcfcfc;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .payment-options {
+            display: flex;
+            align-items: center;
+            /* 垂直居中对齐 */
+            margin-bottom: 16px;
+            /* 调整两行之间的间距 */
+        }
+
+        .payment-option {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            /* 防止文字换行 */
+        }
+
+        button {
+            background-color: #ff0000c7;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>确认订单</h2>
+        <img src="https://p2.lefile.cn/fes/cms/2024/01/05/fkzxv4if4vpch2dh7g473forsrj441702707.png" alt="联想电脑图片" id="productimg">
+
+        <label for="detailAddress">购买数量:</label>
+        <p type="text" id="productid" name="detailAddress" placeholder="请输入详细地址">sadgasdg</p>
+        <label for="detailAddress">商品名称:</label>
+        <p type="text" id="productname" name="productname" placeholder="请输入详细地址">ASLDKJFAG</p>
+        <label for="detailAddress">详细地址:</label>
+        <input type="text" id="detailAddress" name="detailAddress" placeholder="请输入详细地址">
+        <label for="receiverName">收货人姓名:</label>
+        <input type="text" id="receiverName" name="receiverName" placeholder="请输入收货人姓名">
+        <label for="phoneNumber">收货人手机号:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="请输入收货人手机号">
+        <label>付款方式</label>
+        <div class="payment-options">
+            <div class="payment-option">
+                <input type="radio" name="payment" value="online" checked>
+                <label for="online">在线支付</label>
+            </div>
+            <div class="payment-option">
+                <input type="radio" name="payment" value="balance">
+                <label for="balance">余额扣除</label>
+            </div>
+        </div>
+        <button onclick="creatorder()">确认下单</button>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('ProductCode');
+        const num = urlParams.get('num');
+        document.getElementById("productid").textContent = num;
+
+        fetch('json\\productdetails.json')
+        .then(response => response.json())
+        .then(data => {
+          console.log(data[id]);
+          document.getElementById('productimg').src = data[id].ImageURL;
+          document.getElementById("productname").textContent = data[id].ProductName;
+
+    });
+
+
+        // 可以在这里添加省市区数据的加载逻辑
+        function confirmOrder() {
+            // 在这里添加确认订单的逻辑，可以使用JavaScript发送订单信息给服务器
+            alert('订单已确认！');
+            window.location.href = "search.html";
+        }
+
+        function creatorder(){
+            alert('订单已确认！');
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('ProductCode');
+            const num = urlParams.get('num');
+            const proname = document.getElementById("productname").textContent;
+            const address = document.getElementById("detailAddress").value;
+            const name = document.getElementById("receiverName").value;
+            const phone = document.getElementById("phoneNumber").value;
+            const price = document.getElementById("phoneNumber").value;
+
+            fetch('json\\productdetails.json')
+            .then(response => response.json())
+            .then(data => {
+              
+            });
+
+
+            let date = new Date();
+            let dateString = date.toLocaleString();
+            console.log(dateString);
+
+
+            let order = [{
+            img: document.getElementById('productimg').src, 
+            proname: proname,
+            add: address,
+            rename: name,
+            rephone: phone,
+            time: dateString,
+            buynmb: num
+          }];
+
+          let data = JSON.stringify(order, null, 2);
+
+          let blob = new Blob([data], {type: 'text/plain'});
+          let url = URL.createObjectURL(blob);
+
+          let a = document.createElement('a');
+          a.href = url;
+          a.download = 'order.json';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+
+          window.location.href = "search.html";
+        }
+
+
+
+
+
+
+        function creatorder2(){
+          var data = {
+            "商品图片": "联想(Lenovo)拯救者R7000", 
+  "商品名称": "联想(Lenovo)拯救者R7000",
+  "收货地址": "中国海洋大学西海岸校区",
+  "收货人姓名": "2组 吕锐中",
+  "收货人手机号": "15807694376",
+  "订单建立时间": "2024/1/8 02:46:48",
+  "商品数量": "1"
+  };
+
+  var file = new Blob([JSON.stringify(data)], {type: "application/json"});
+  var a = document.createElement("a");
+  var url = URL.createObjectURL(file);
+  a.href = url;
+  a.download = "data.json";
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(function() {
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);  
+  }, 0);
+
+        }
+
+
+    </script>
+</body>
+
+</html>

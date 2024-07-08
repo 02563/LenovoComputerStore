@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Store - Search results</title>
+    <!--我设置的字体，要改的话可以去https://fonts.google.com/找一个来改，记得同时改CSS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/details.css" id="myElement"/>
+  </head>
+  <body>
+    <navbar>
+    <nav class="navbar bg">
+      <ul class="links-container">
+        <li class="link-item"><a href="search.html" class="link">HOME</a></li>
+
+        <li class="link-item"><a href="historylist.html" class="link">ORDER</a></li>
+        <li class="link-item"><a href="contact.html" class="link">CONTACT</a></li>
+      </ul>
+      <div class="head-search">
+				<input type="text" placeholder="请输入商品..." id="myInput"/>
+				<button onclick="search()">搜索</button>
+      </div>
+      <div class="user-interactions">
+        <div class="cart">
+          <!--购物车
+            <img src="img/cart.png" class="cart-icon" alt="" />
+
+            <span class="cart-item-count">00</span>
+          -->
+        </div>
+        <div class="user">
+          <a href="login.html">
+            <img src="img/exit.png" class="user-icon" alt="" />
+            </a>
+        </div>
+      </div>
+      <div class="sign">
+        <img src="img/lenovo.png" class="left-top" alt="sign-lenovo" />
+      </div>
+    </nav>
+    
+    <hr class="spacer-red" />
+    <div class="d-center">
+			<div class="link-word">
+				<ul>
+					<div class="word"><a href="#">首页</a>&gt;</div>
+					<div class="word"><a href="#">商品详情 </a>&gt;</div>
+					<div class="word"><a href="#"> 联想(Lenovo)拯救者R7000 15.6英寸电竞游戏本笔记本电脑 钛晶灰 </a>;</div>
+        </ul>
+			</div>
+      <div class="con_left">
+        <div class="goodsPicture">
+          <img id="winpic" src="" class="goodsPicture1">
+        </div>
+        <div class="playPicture">
+          <a class="left-button">
+            <div class="triangle-wrap">
+            <div id="triangle-left"></div>
+            <div id="triangle-left1"></div>
+            </div>
+          </a>
+          <a class="right-button">
+            <div class="triangle-wrap">
+            <div id="triangle-right"></div>
+            <div id="triangle-right1"></div>
+            </div>
+          </a>
+          <div class="list" id="#detail_playPicture">
+            <ul>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    <div class="con_right">
+      <h3 id="myHeading">联想(Lenovo)笔记本电脑</h3>
+      <p class="detail-tip">推荐选择下方套餐购买，全国联保，赠送电脑包</p>
+      <div class="detail-red">
+        <div class="red-col-1">
+          <div class="price-tag">会员价格</div>
+          <div class="price" id="myDiv">￥0.00</div>
+          <div class="down-price">降价通知</div>
+          <div class="total-appraise">累计评价612188</div>
+        </div>
+
+        <!--  优惠内容 -->
+        <div class="red-col-2">
+          <div class="sale-tag">优惠</div>
+          <div class="sale-red-text"><a href="#">加购价</a></div>
+          <div class="sale-content">满3999.00减30.00元,或满4999.00减40.00,满8999.00减80.00元<a href="#">详情</a></div>
+        </div>
+
+
+      </div>
+
+      <div class="col-3">
+        <div class="support-tag">增值业务</div>
+        <div class="support-text">支持以旧换新，闲置电脑回收 赠送礼品</div>
+      </div>
+
+      <div class="col-4">
+        <div class="choose-systerm">操作系统</div>
+        <button id="button-choose">Windows11家庭中文版</button>
+      </div>
+
+      <div class="col-5">
+        <div class="cpu-tag">处理器</div>
+        <button id="button-choose2">AMD R7 7840H</button>
+      </div>
+
+      <div class="col-6">
+        <div class="storage-tag">存储</div>
+        <button id="button-choose3">【官方标配】 16GB/512G SSD</button>
+      </div>
+      
+      <div class="col-7">
+        <div class="gpu-tag">显卡</div>
+        <button id="button-choose4">RTX3060</button>
+      </div>
+
+      <div class="col-8">
+        <div class="business-tag">购买数量</div>
+        <div class="control-num">
+          <div class="add"onclick=add()>+</div>
+          <input type="text" value="1" id="buynum"/>
+          <div class="reduce"onclick=reduce()>-</div>
+        </div>
+      </div>
+      <div class="col-9">
+        <div class="business-tag">&nbsp</div>
+        <div class="business-datail">
+          <div class="button-pay" onclick="confirm()">立即购买</div>
+          <!--加入购物车按钮
+          <div class="button-add">加入购物车</div>
+          -->
+        </div>
+      </div>
+    </section>
+  </body>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('ProductCode');
+  
+    fetch('json\\productdetails.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data[id].ImageURL);
+      //console.log(document.getElementById('img1').src);
+      //document.getElementById('img1').src = data[id].ImageURL;
+      document.getElementById('myHeading').textContent = data[id].ProductName;
+      document.getElementById('myDiv').textContent = "￥"+data[id].Price;
+      document.getElementById('winpic').src = data[id].ImageURL;
+
+      var text = data[id].Specifications;
+      var parts = text.split("/");
+      console.log(parts);
+      document.getElementById('button-choose2').textContent = parts[0];
+      document.getElementById('button-choose3').textContent = parts[2]+"/"+parts[3];
+      document.getElementById('button-choose4').textContent = parts[4];
+      console.log(document.getElementById('button-choose3').textContent);
+
+      const links = document.querySelectorAll('a');
+
+      console.log(links[12]);
+      var nub=document.getElementById("buynum").value;
+      links[12].href ="confirm.html?ProductCode="+id+"&num="+nub;
+
+
+    });
+  
+    function search(){
+           // 阻止默认事件，防止页面刷新
+          event.preventDefault();
+          console.log("successful")
+          var input = document.getElementById("myInput").value;
+          window.location.href = "search.html?productname="+input;
+        }
+
+    function add(){
+      var nub=document.getElementById("buynum").value;
+      document.getElementById("buynum").value=parseFloat(nub)+1;
+    }
+
+    function reduce(){
+      var nub=parseFloat(document.getElementById("buynum").value);
+      if(nub>=2)
+      {
+      document.getElementById("buynum").value=parseFloat(nub)-1;
+      }
+    }
+      
+    function confirm(){
+      var nub=parseFloat(document.getElementById("buynum").value);
+      window.location.href = "confirm.html?ProductCode="+id+"&num="+nub;
+      
+    }
+  
+  </script>
+
+
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Store - Search results</title>
+    <!--我设置的字体，要改的话可以去https://fonts.google.com/找一个来改，记得同时改CSS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/search.css" />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar bg">
+      <ul class="links-container">
+        <li class="link-item"><a href="#" class="link">HOME</a></li>
+        <li class="link-item"><a href="#" class="link">PRODUCT</a></li>
+        <li class="link-item"><a href="#" class="link">ABOUT</a></li>
+        <li class="link-item"><a href="#" class="link">CONTACT</a></li>
+      </ul>
+      <div class="user-interactions">
+        <div class="cart">
+          <img src="img/cart.png" class="cart-icon" alt="" />
+          <span class="cart-item-count">00</span>
+        </div>
+        <div class="user">
+          <img src="img/user.png" class="user-icon" alt="" />
+        </div>
+      </div>
+      <div class="sign">
+        <img src="img/lenovo.png" class="left-top" alt="sign-lenovo" />
+      </div>
+    </nav>
+    <section class="search-listing">
+      <h1 class="section-title">Computers</h1>
+      <form action="/search" method="get">
+        <div>
+          <label for="searchInput">搜索：</label>
+          <input
+            type="text"
+            id="searchInput"
+            name="q"
+            placeholder="在这里输入搜索内容"
+            required
+          />
+          <button type="submit">搜索</button>
+        </div>
+      </form>
+      <div class="product-container">
+        <div class="product-card">
+          <img src="img/1.jpg" class="product-img" alt="" />
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <img src="img/2.jpg" class="product-img" alt="" />
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <img src="img/3.jpg" class="product-img" alt="" />
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <img src="img/4.jpg" class="product-img" alt="" />
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <img src="img/5.jpg" class="product-img" alt="" />
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <img src="img/6.jpg" class="product-img" alt="" />
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <img src="img/7.jpg" class="product-img" alt="" />
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <img src="img/8.jpg" class="product-img" alt="" />
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <img src="img/9.jpg" class="product-img" alt="" />
+          <p class="product-price">$ 66</p>
+        </div>
+        <!--要想加图片就用我的css继续加就行！-->
+      </div>
+    </section>
+  </body>
+</html>

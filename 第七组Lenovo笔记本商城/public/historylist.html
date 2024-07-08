@@ -1,0 +1,183 @@
+<!--
+ * @Author: 吕 锐中 1286565437@qq.com
+ * @Date: 2024-01-08 02:47:53
+ * @LastEditors: 吕 锐中 1286565437@qq.com
+ * @LastEditTime: 2024-01-08 09:01:39
+ * @FilePath: \kechengsheji\hello-world\public\historylist.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Store - Search results</title>
+    <!--我设置的字体，要改的话可以去https://fonts.google.com/找一个来改，记得同时改CSS-->
+    <link rel="stylesheet" href="css/search (2).css" />
+  </head>
+
+  <body>
+
+    
+    <!-- navbar -->
+    <nav class="navbar bg">
+      <ul class="links-container">
+        <li class="link-item"><a href="search.html" class="link">HOME</a></li>
+        <li class="link-item"><a href="historylist.html" class="link">ORDER</a></li>
+        <li class="link-item"><a href="contact.html" class="link">CONTACT</a></li>
+      </ul>
+      <div class="user-interactions">
+        <div class="user">
+          <a href="login.html">
+            <img src="img/exit.png" class="user-icon" alt="" />
+          </a>
+        </div>
+      </div>
+      <div class="sign">
+        <img src="img/lenovo.png" class="left-top" alt="sign-lenovo" />
+      </div>
+    </nav>
+
+    <!-- History Orders Section -->
+    <section class="history-orders">
+      <!-- Order 1 -->
+      <div class="order">
+        <img src="img/1.jpg" alt="Product 1" class="product-image" id="img1"/>
+        <div class="order-details">
+          <h3>商 品 名: </h3> <p id="name1"> </p><br>
+
+          <h3>收货人姓 名: </h3><p id="rename1"> </p><br>
+          <h3>收货人手机号: </h3><p id="phone1"> </p><br>
+          <h3>收 货 地 址: </h3><p id="address1"> </p><br>
+          <h3>下单时间: </h3><p id="time1"> </p><br>
+        </div>
+      </div>
+
+      <!-- Order 2 -->
+      <div class="order">
+        <img src="img/1.jpg" alt="Product 1" class="product-image" id="img2"/>
+        <div class="order-details">
+          <h3>商 品 名: </h3> <p id="name2">  </p><br>
+
+          <h3>收货人姓 名: </h3><p id="rename2"> </p><br>
+          <h3>收货人手机号: </h3><p id="phone2"> </p><br>
+          <h3>收 货 地 址: </h3><p id="address2"> </p><br>
+          <h3>下单时间: </h3><p id="time2"> </p><br>
+        </div>
+      </div>
+
+            <!-- Order 3 -->
+            <div class="order">
+              <img src="img/1.jpg" alt="Product 1" class="product-image" id="img3"/>
+              <div class="order-details">
+                <h3>商 品 名: </h3> <p id="name3">  </p><br>
+
+                <h3>收货人姓 名: </h3><p id="rename3"> </p><br>
+                <h3>收货人手机号: </h3><p id="phone3"> </p><br>
+                <h3>收 货 地 址: </h3><p id="address3"> </p><br>
+                <h3>下单时间: </h3><p id="time3"> </p><br>
+              </div>
+            </div>
+
+                  <!-- Order 4 -->
+      <div class="order">
+        <img src="img/1.jpg" alt="Product 1" class="product-image" id="img4"/>
+        <div class="order-details">
+          <h3>商 品 名: </h3> <p id="name4">  </p><br>
+
+          <h3>收货人姓 名: </h3><p id="rename4"> </p><br>
+          <h3>收货人手机号: </h3><p id="phone4"> </p><br>
+          <h3>收 货 地 址: </h3><p id="address4"> </p><br>
+          <h3>下单时间: </h3><p id="time4"> </p><br>
+        </div>
+      </div>      <!-- Order 5 -->
+      <div class="order">
+        <img src="img/1.jpg" alt="Product 1" class="product-image" id="img5"/>
+        <div class="order-details">
+          <h3>商 品 名: </h3> <p id="name5">  </p><br>
+
+          <h3>收货人姓 名: </h3><p id="rename5"> </p><br>
+          <h3>收货人手机号: </h3><p id="phone5"> </p><br>
+          <h3>收 货 地 址: </h3><p id="address5"> </p><br>
+          <h3>下单时间: </h3><p id="time5"> </p><br>
+        </div>
+      </div>
+
+      <!-- Add more orders as needed -->
+    </section>
+  </body>
+
+  <script>
+    
+    fetch('json\\order (1).json')
+        .then(response => response.json())
+        .then(data => {          
+          document.getElementById("img1").src=data[0].img;
+          document.getElementById("name1").textContent=data[0].proname;
+          //document.getElementById("price3").src=data[0].img;
+          document.getElementById("rename1").textContent=data[0].rename;
+          document.getElementById("phone1").textContent=data[0].rephone;
+          document.getElementById("address1").textContent=data[0].add;
+          document.getElementById("time1").textContent=data[0].time;
+        });
+
+        fetch('json\\order (2).json')
+        .then(response => response.json())
+        .then(data => {          
+          document.getElementById("img2").src=data[0].img;
+          document.getElementById("name2").textContent=data[0].proname;
+          //document.getElementById("price3").src=data[0].img;
+          document.getElementById("rename2").textContent=data[0].rename;
+          document.getElementById("phone2").textContent=data[0].rephone;
+          document.getElementById("address2").textContent=data[0].add;
+          document.getElementById("time2").textContent=data[0].time;
+        });
+
+        fetch('json\\order (3).json')
+        .then(response => response.json())
+        .then(data => {          
+          console.log(data);
+          console.log(data[0].img);
+          document.getElementById("img3").src=data[0].img;
+          document.getElementById("name3").textContent=data[0].proname;
+          //document.getElementById("price3").src=data[0].img;
+          document.getElementById("rename3").textContent=data[0].rename;
+          document.getElementById("phone3").textContent=data[0].rephone;
+          document.getElementById("address3").textContent=data[0].add;
+          document.getElementById("time3").textContent=data[0].time;
+        });
+
+        fetch('json\\order (4).json')
+        .then(response => response.json())
+        .then(data => {          
+          document.getElementById("img4").src=data[0].img;
+          document.getElementById("name4").textContent=data[0].proname;
+          //document.getElementById("price3").src=data[0].img;
+          document.getElementById("rename4").textContent=data[0].rename;
+          document.getElementById("phone4").textContent=data[0].rephone;
+          document.getElementById("address4").textContent=data[0].add;
+          document.getElementById("time4").textContent=data[0].time;
+        });
+
+        fetch('json\\order (5).json')
+        .then(response => response.json())
+        .then(data => {          
+          document.getElementById("img5").src=data[0].img;
+          document.getElementById("name5").textContent=data[0].proname;
+          //document.getElementById("price3").src=data[0].img;
+          document.getElementById("rename5").textContent=data[0].rename;
+          document.getElementById("phone5").textContent=data[0].rephone;
+          document.getElementById("address5").textContent=data[0].add;
+          document.getElementById("time5").textContent=data[0].time;
+        });
+
+
+
+
+
+    
+  </script>
+
+
+</html>

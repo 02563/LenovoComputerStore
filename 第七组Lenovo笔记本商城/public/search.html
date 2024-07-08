@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Store - Search results</title>
+    <!--我设置的字体，要改的话可以去https://fonts.google.com/找一个来改，记得同时改CSS-->
+    <link rel="stylesheet" href="css/search.css" />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar bg">
+      <ul class="links-container">
+        <li class="link-item"><a href="search.html" class="link">HOME</a></li>
+        <li class="link-item"><a href="historylist.html" class="link">ORDER</a></li>
+        <li class="link-item"><a href="contact.html" class="link">CONTACT</a></li>
+
+
+      </ul>
+      <div class="user-interactions">
+        <div class="user">
+          <a href="login.html">
+          <img src="img/exit.png" class="user-icon" alt="" />
+          </a>
+        </div>
+      </div>
+      <div class="sign">
+        <img src="img/lenovo.png" class="left-top" alt="sign-lenovo" />
+      </div>
+    </nav>
+    <section class="search-listing">
+      <h1 class="section-title">
+        Computers&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      </h1>
+      <form  method="get">
+        <div>
+          <div class="head-search">
+            <input type="text" placeholder="请输入商品..." id="myInput"/>
+            <button type="submit" onclick="search()">搜索</button>
+          </div>
+        </div>
+      </form>
+
+      <!--商品格-->
+      <div class="product-container">
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price" id="price">333</p>
+        </div>
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price" id="price">$ 321</p>
+        </div>
+        <!--要想加图片就用我的css继续加就行！-->
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price">$ 66</p>
+        </div>
+        <div class="product-card">
+          <a href="details.html?id=123&name=John">
+            <img src="img/1.jpg" class="product-img" alt="" />
+          </a>
+          <p class="product-price">$ 66</p>
+        </div>
+
+      </div>
+    </section>
+
+    <script>
+
+      var params = new URLSearchParams(window.location.search);
+      var param1 = params.get("productname");
+
+
+      fetch('json\\productdetails.json')
+        .then(response => response.json())
+        .then(data => {
+          const specificInfo = data[0].Price;
+          console.log("yes");
+        });
+        console.log("no");
+      
+      
+      
+        fetch('json\\productdetails.json')
+        .then(response => response.json())
+        .then(data => {
+          const productImages = document.querySelectorAll('.product-img');
+          const priceElements = document.querySelectorAll('.product-price');
+          const links = document.querySelectorAll('a');
+          console.log(data);
+          console.log(links[4].href);
+      
+          for (let i = 0; i < 20; i++) {
+            productImages[i].src = data[i].ImageURL;
+            priceElements[i].textContent = "￥"+data[i].Price;
+            links[i+4].href ="details.html?ProductCode="+i;
+          }
+        });
+      
+        function search(){
+          // 阻止默认事件，防止页面刷新
+          event.preventDefault();
+          console.log("successful")
+          var input = document.getElementById("myInput").value;
+
+          if (input === "") {
+
+          }
+          else 
+          {
+            fetch('json\\productdetails.json')
+            .then(response => response.json())
+            .then(data => {
+              for (let j = 0; j < 20; j++) {
+                const productImages = document.querySelectorAll('.product-img');
+                const priceElements = document.querySelectorAll('.product-price');
+                if(data[j].ProductName==input)
+                {
+                  productImages[0].src = data[j].ImageURL;
+                  for (let k = 1; k < 20; k++) {
+                    productImages[k].src = "img/white.jpg";
+                    priceElements[k].textContent="";
+                  }
+                }
+              }
+            });
+
+          }
+        }
+
+        if(param1!="")
+        {
+          document.getElementById("myInput").value=param1;
+          search();
+          console.log("faillll")
+        }
+      
+        </script>
+
+  </body>
+</html>
